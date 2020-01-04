@@ -4,12 +4,24 @@
   "description": "Next.js + Electron starter template",
   "main": "main/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "electron .",
+    "clean": "rm -rf build/next renderer/.next",
+    "build": "next build renderer && next export renderer -o build/next/",
+    "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
   "author": "Martín M.",
   "license": "MIT",
+  "dependencies": {
+    "electron-is-dev": "^1.1.0",
+    "electron-next": "^3.1.5",
+    "electron-serve": "^0.4.1",
+    "electron-window-state": "^5.0.3"
+  },
   "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
     "babel-eslint": "^9.0.0",
+    "electron": "^7.1.7",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^4.3.0",
@@ -20,6 +32,12 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.19.1"
+    "next": "^9.1.7",
+    "next-compose-plugins": "^2.2.0",
+    "prettier": "^1.19.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
+    "url-loader": "^3.0.0"
   }
 }
